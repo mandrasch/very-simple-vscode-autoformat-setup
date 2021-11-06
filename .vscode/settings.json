@@ -3,5 +3,8 @@
   "editor.formatOnSave": true,
   "[php]": {
     "editor.defaultFormatter": null
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
   }
 }
