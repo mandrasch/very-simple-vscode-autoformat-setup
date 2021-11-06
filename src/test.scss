@@ -1,0 +1,6 @@
+.test {
+  color: red;
+  &:focus {
+    border: 1px solid red;
+  }
+}

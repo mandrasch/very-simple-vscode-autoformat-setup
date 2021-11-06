@@ -43,57 +43,69 @@ Prettier was built as "opinionated code formatter" with the goal of "No need to 
 
 ### Configuration
 
-1. Line endings and encoding UTF-8 for all files are defined in [.editorconfig](./.editorconfig). This is important for git commits, different team members using different line endings can be annoying in git history. Another advantage of .editorconfig i sthat other IDEs and other file type formatters can parse these basic settings as well:
+**1. Line endings, tab width, UTF-8**
 
-   ```yaml
-   [*]
-   end_of_line = lf
-   charset = utf-8
-   ```
+Line endings and encoding UTF-8 for all files are defined in [.editorconfig](./.editorconfig). This is important for git commits, different team members using different line endings can be annoying in git history. Another advantage of .editorconfig i sthat other IDEs and other file type formatters can parse these basic settings as well. This is consistent with prettiers defaults of tab-width:2:
 
-We leave the rest of the settings up to the formatter extensions, although we could define tab width here as well.
+```bash
+# EditorConfig is awesome: https://EditorConfig.org
 
-2. The important part is to set a defaultFormatter for your team such as [Prettier](https://prettier.io/) for HTML/CSS/JS in [.vscode/settings.json](./.vscode/settings.json):
+# top-most EditorConfig file
+root = true
 
-   ```json
-   {
-     "editor.defaultFormatter": "esbenp.prettier-vscode",
-     "editor.formatOnSave": true,
-     "[php]": {
-       "editor.defaultFormatter": null
-     }
-   }
-   ```
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_size = 2
+indent_style = space
+```
 
-   As mentioned above we just use prettier defaults by using an empty [.prettierrc](./.prettierrc) file, no discussions (at first ;-)). Prettier default is for example tab width = 2, see [Prettier options](https://prettier.io/docs/en/options.html).
+**2. Set default formatter(s)**
 
-   ```json
-   {}
-   ```
+The important part is to set a defaultFormatter for your team such as [Prettier](https://prettier.io/) for HTML/CSS/JS in [.vscode/settings.json](./.vscode/settings.json):
 
-   This has the advantage that global settings of your vs code configuration won't be used in this project, e.g. if someone set their tab width to 3 in VSCode > Preferences > Prettier. This will be ignored:
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[php]": {
+    "editor.defaultFormatter": null
+  }
+}
+```
 
-   ![Screenshot with prettier console log " Detected local configuration (i.e. .prettierrc or .editorconfig), VS Code configuration will not be used"](screenshots/screenshot_prettier_detected_local_config.png)
+As mentioned above we just use prettier defaults by using an empty [.prettierrc](./.prettierrc) file, no discussions (at first ;-)). Prettier default is for example tab width = 2, see [Prettier options](https://prettier.io/docs/en/options.html).
 
-   Optional: Exclude file types if you need a different formatter for PHP, Nunjucks, etc. (Formatters behave differently, some respect and parse .editorconfig). Here is an example for choosing a different formatter for PHP:
+```json
+{}
+```
 
-   ```json
-   "[php]": {
-       "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-   }
-   ```
+This has the advantage that global settings of your vs code configuration won't be used in this project, e.g. if someone set their tab width to 3 in VSCode > Preferences > Prettier. This will be ignored:
 
-3. If you don't want to impose editor.formatOnSave on true for all file types, you can exclude them (or just activate it for specific filetypes):
+![Screenshot with prettier console log " Detected local configuration (i.e. .prettierrc or .editorconfig), VS Code configuration will not be used"](screenshots/screenshot_prettier_detected_local_config.png)
 
-   ```json
-   "[scss]": {
-           "editor.formatOnSave": true
-   }
-   ```
+Optional: Exclude file types if you need a different formatter for PHP, Nunjucks, etc. (Formatters behave differently, some respect and parse .editorconfig). Here is an example for choosing a different formatter for PHP:
 
-   _Unfortunately you can't currently configure multiple languages at once like [scss, js], see [vscode/issues/51935](https://github.com/microsoft/vscode/issues/51935)._
+```json
+"[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+}
+```
 
-   If you want to let decide each team member when to use formatOnSave, you can use [Status Bar Format Toggle extension](https://marketplace.visualstudio.com/items?itemName=tombonnike.vscode-status-bar-format-toggle) as well and set `formatOnSave`to `false`.
+### 3. formatOnSave ?
+
+If you don't want to impose editor.formatOnSave on true for all file types, you can exclude them (or just activate it for specific filetypes):
+
+```json
+"[scss]": {
+        "editor.formatOnSave": true
+}
+```
+
+_Unfortunately you can't currently configure multiple languages at once like [scss, js], see [vscode/issues/51935](https://github.com/microsoft/vscode/issues/51935)._
+
+If you want to let decide each team member when to use formatOnSave, you can use [Status Bar Format Toggle extension](https://marketplace.visualstudio.com/items?itemName=tombonnike.vscode-status-bar-format-toggle) as well and set `formatOnSave`to `false`.
 
 ### Extensions needed
 
@@ -106,6 +118,7 @@ _Recommended extensions can be documented in [.vscode/extensions.json](./.vscode
 
 - While Prettier supports many file types, there are always exceptions such as Nunjucks (used by eleventy e.g.) or languages such as PHP (only via prettier plugin), etc.
 - In some combinations file associations need to be used, e.g. when Nunjucks syntax is used in .html-files.
+- Don't get confused by status bar "Spaces: X" information, this information can be wrong if there are no spaces used in empty files. After first format and re-opening the file this will be detected correctly by VSCode.
 
 ### More resources:
 
