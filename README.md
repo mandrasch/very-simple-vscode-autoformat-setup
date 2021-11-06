@@ -3,6 +3,7 @@
 _State: Work in progress_
 
 ![Cheatsheet with visual information for following text](readme_images/cheatsheet.png)
+Source: [GDocs](https://kurzelinks.de/9i7r)
 
 ## Full guide
 
