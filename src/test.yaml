@@ -1,0 +1,5 @@
+---
+name: "Apple"
+skill-collection:
+  php: false
+  js: true
