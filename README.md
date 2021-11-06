@@ -122,6 +122,7 @@ _Recommended extensions can be documented in [.vscode/extensions.json](./.vscode
 - https://blog.theodo.com/2019/08/empower-your-dev-environment-with-eslint-prettier-and-editorconfig-with-no-conflicts/
 - (german) https://bitspeicher.blog/make-it-prettier-teil-1-was-ist-prettier-und-warum-sollte-ich-es-verwenden/
 - https://prettier.io/docs/en/option-philosophy.html
+- Prettier: .prettierrc > .editorconfig > vscode settings https://prettier.io/docs/en/api.html#prettierresolveconfigfilepath--options
 - Other strategies:
   - https://twitter.com/fn_schubert/status/1455810034374426624
   - https://twitter.com/kino_auge/status/1455814661526409220
