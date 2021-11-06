@@ -68,10 +68,7 @@ The important part is to set a defaultFormatter for your team such as [Prettier]
 ```json
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "[php]": {
-    "editor.defaultFormatter": null
-  }
+  "editor.formatOnSave": true
 }
 ```
 
