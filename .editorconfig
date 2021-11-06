@@ -3,6 +3,8 @@
 # top-most EditorConfig file
 root = true
 
+# basic editor configuration, consistent to prettier defaults
+# https://prettier.io/docs/en/options.html
 [*]
 end_of_line = lf
 insert_final_newline = true

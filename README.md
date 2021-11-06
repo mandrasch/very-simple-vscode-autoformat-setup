@@ -16,19 +16,19 @@ or `Right click -> Format`.
 
 You can find out which formatter is currently used by `Right click -> Format Document with ...`)
 
-![Screenshot format document with, selection of formatters](screenshots/screenshot_format_document_with.png)
+![Screenshot format document with, selection of formatters](readme_images/screenshot_format_document_with.png)
 
 Another helpful information can be found in the status bar, the currently detected language, the line endings, encoding and spaces settings of the file:
 
-![Screenshot statusbar with file informations](screenshots/screenshot_status_bar.png)
+![Screenshot statusbar with file informations](readme_images/screenshot_status_bar.png)
 
 ## How to use the same setting in teams?
 
 The most simple way I found is using a combination of `.editorconfig` and `.vscode/settings.json`.
 
-⚠️ For editorconfig-support the [EditorcConfig-extension](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) needs to be installed.
+⚠️ For editorconfig-support the [EditorcConfig-extension](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) needs to be installed. If you open up a project folder, .editorconfig and setting.json will then be parsed.
 
-If you open up a project folder, .editorconfig and setting.json will then be parsed.
+![Cheatsheet with visual information for following text](readme_images/cheatsheet.png)
 
 ### Separation of concerns
 
@@ -80,7 +80,7 @@ As mentioned above we just use prettier defaults by using an empty [.prettierrc]
 
 This has the advantage that global settings of your vs code configuration won't be used in this project, e.g. if someone set their tab width to 3 in VSCode > Preferences > Prettier. This will be ignored:
 
-![Screenshot with prettier console log " Detected local configuration (i.e. .prettierrc or .editorconfig), VS Code configuration will not be used"](screenshots/screenshot_prettier_detected_local_config.png)
+![Screenshot with prettier console log " Detected local configuration (i.e. .prettierrc or .editorconfig), VS Code configuration will not be used"](readme_images/screenshot_prettier_detected_local_config.png)
 
 Optional: Exclude file types if you need a different formatter for PHP, Nunjucks, etc. (Formatters behave differently, some respect and parse .editorconfig). Here is an example for choosing a different formatter for PHP:
 
