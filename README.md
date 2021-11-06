@@ -14,7 +14,13 @@ or `Right click -> Format`.
 
 ⚠️ BUT: The result of auto-formatting depends on your vscode settings as well as the used formatter (extension). Therefore a shared configuration for yor team is needed.
 
-(You can find out which formatter is currently used by `Right click -> Format Document with ...`)
+You can find out which formatter is currently used by `Right click -> Format Document with ...`)
+
+![Screenshot format document with, selection of formatters](screenshots/screenshot_format_document_with.png)
+
+Another helpful information can be found in the status bar, the currently detected language, the line endings, encoding and spaces settings of the file:
+
+![Screenshot statusbar with file informations](screenshots/screenshot_status_bar.png)
 
 ## How to use the same setting in teams?
 
