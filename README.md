@@ -130,7 +130,8 @@ _Recommended extensions can be documented in [.vscode/extensions.json](./.vscode
 
 ### TODOs
 
-- Do we really need an empty .prettierrc file? .editorconfig should be enough to use local settings?
+- What about `insert_final_newline = true`, not supported by prettier, what is the default of prettier? (https://prettier.io/docs/en/api.html#prettierresolveconfigfilepath--options)
+- Do we really need an empty .prettierrc file? .editorconfig should be enough to use (local) project folder settings (and not user-specific vscode settings)?
 
 ### More resources:
 
