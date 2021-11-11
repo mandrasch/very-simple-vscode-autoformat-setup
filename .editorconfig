@@ -1,14 +1,21 @@
 # EditorConfig is awesome: https://EditorConfig.org
 
+# ! Install VSCode extension !
+# https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+
 # top-most EditorConfig file
 root = true
 
-# basic editor configuration, consistent to prettier defaults
-# https://prettier.io/docs/en/options.html
+# basic editor configuration
 [*]
-end_of_line = lf
 charset = utf-8
+end_of_line = lf
 indent_size = 2
 indent_style = space
-# TODO: This is not supported by prettier? What is the default?
 insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Settings are consistent to Prettier defaults
+# https://prettier.io/docs/en/options.html
+# Prettier supports end_of_line, indent_style, indent_size/tab_width, max_line_length,
+# see: https://prettier.io/docs/en/api.html#prettierresolveconfigfilepath--options)
