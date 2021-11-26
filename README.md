@@ -2,6 +2,7 @@
 
 _State: Work in progress_
 
+TODO: This does not work as intended, see https://github.com/mandrasch/very-simple-vscode-autoformat-setup/issues/1
 ![Cheatsheet with visual information for following text](readme_images/cheatsheet.png)
 
 Source: [Google Drive](https://kurzelinks.de/9i7r)
